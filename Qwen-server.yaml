@@ -31,6 +31,9 @@ spec:
 
               echo "[2] Setting up environment..."
 
+              # Remove conflicting NVIDIA libs
+              pip uninstall -y torch torchvision torchaudio transformers peft accelerate bitsandbytes transformer-engine transformer-engine-cu12 transformer_engine_extensions || true
+
               pip install --upgrade pip
 
               pip uninstall -y torch torchvision torchaudio transformers peft accelerate bitsandbytes || true
