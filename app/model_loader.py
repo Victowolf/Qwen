@@ -19,7 +19,7 @@ from peft import LoraConfig, get_peft_model
 from config.settings import MODEL_NAME, LORA_R, LORA_ALPHA, LORA_DROPOUT
 
 
-LOCAL_MODEL_PATH = "./models/qwen2.5-3b"
+LOCAL_MODEL_PATH = "./models/qwen2.5-7b"
 
 
 class ModelLoader:
@@ -54,7 +54,8 @@ class ModelLoader:
             quantization_config=bnb_config,
             device_map="auto",
             cache_dir=LOCAL_MODEL_PATH,
-            attn_implementation="eager"
+            attn_implementation="eager",
+            torch_dtype=torch.float16
         )
 
         print("Attaching LoRA adapter...")

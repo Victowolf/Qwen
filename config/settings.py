@@ -1,4 +1,4 @@
-MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
+MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 
 # LoRA Config
 LORA_R = 16
