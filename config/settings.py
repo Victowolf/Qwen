@@ -1,0 +1,10 @@
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
+
+# LoRA Config
+LORA_R = 16
+LORA_ALPHA = 32
+LORA_DROPOUT = 0.05
+
+# Generation Config
+MAX_NEW_TOKENS = 100
+TEMPERATURE = 0.7

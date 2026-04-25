@@ -1,0 +1,71 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# Virtual Environment
+venv/
+.env/
+.env.*
+
+# =========================
+# Models & Weights (VERY IMPORTANT)
+# =========================
+models/
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+
+# HuggingFace cache
+.cache/
+huggingface/
+.huggingface/
+
+# =========================
+# Logs & Temp Files
+# =========================
+logs/
+*.log
+tmp/
+temp/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# VS Code / IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Jupyter (if used later)
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# FastAPI / Server artifacts
+# =========================
+*.pid
+
+# =========================
+# Build / Dist
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Kubernetes / Secrets
+# =========================
+*.yaml.local
+*.env.local

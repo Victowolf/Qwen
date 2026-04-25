@@ -1,0 +1,51 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: qwen-lora-server
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: qwen-lora-container
+          image: nvcr.io/nvidia/pytorch:24.03-py3
+          env:
+            - name: HF_HOME
+              value: /workspace/models
+            - name: TRANSFORMERS_CACHE
+              value: /workspace/models
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              set -euo pipefail
+              echo "=== Starting Qwen LoRA FastAPI Server ==="
+
+              cd /workspace || mkdir -p /workspace && cd /workspace
+
+              echo "[1] Cloning repo..."
+              rm -rf project || true
+              git clone <YOUR_GITHUB_REPO_LINK>
+
+              cd project || (echo "ERROR: repo folder not found"; exit 1)
+
+              echo "[2] Setting up environment..."
+
+              pip install --upgrade pip
+
+              pip install torch --index-url https://download.pytorch.org/whl/cu121
+
+              pip install -r requirements.txt
+
+              echo "[3] Starting FastAPI server..."
+
+              uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+              echo "=== Server Exited ==="
+
+          ports:
+            - containerPort: 8000
+
+          resources:
+            limits:
+              nvidia.com/mig-2g.35gb: 1
