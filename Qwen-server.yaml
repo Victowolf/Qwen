@@ -25,7 +25,7 @@ spec:
 
               echo "[1] Cloning repo..."
               rm -rf project || true
-              git clone <YOUR_GITHUB_REPO_LINK>
+              git clone https://github.com/Victowolf/Qwen project
 
               cd project || (echo "ERROR: repo folder not found"; exit 1)
 
