@@ -34,6 +34,8 @@ spec:
               # Remove conflicting NVIDIA libs
               pip uninstall -y torch torchvision torchaudio transformers peft accelerate bitsandbytes transformer-engine transformer-engine-cu12 transformer_engine_extensions || true
 
+              pip uninstall -y flash-attn flash_attn flash_attn_2_cuda || true
+
               pip install --upgrade pip
 
               pip uninstall -y torch torchvision torchaudio transformers peft accelerate bitsandbytes || true

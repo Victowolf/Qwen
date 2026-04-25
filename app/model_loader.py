@@ -53,7 +53,8 @@ class ModelLoader:
             MODEL_NAME,
             quantization_config=bnb_config,
             device_map="auto",
-            cache_dir=LOCAL_MODEL_PATH
+            cache_dir=LOCAL_MODEL_PATH,
+            attn_implementation="eager"
         )
 
         print("Attaching LoRA adapter...")
