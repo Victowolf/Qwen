@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: gptoss-service
+  name: qwen-lora-service
 spec:
   type: NodePort
   selector:
-    job-name: gptoss35-server    # IMPORTANT: match your Job name!
+    job-name: qwen-lora-server   # 🔥 MUST match your Job metadata.name
   ports:
     - name: http
-      port: 8000                # container port
+      port: 8000
       targetPort: 8000
-      nodePort: 30124           # external port you want
+      nodePort: 30124
