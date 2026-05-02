@@ -1,5 +1,5 @@
 import torch
-from config.settings import MAX_NEW_TOKENS, TEMPERATURE
+from config.settings import MAX_NEW_TOKENS, MAX_INPUT_TOKENS, TEMPERATURE
 from app.model_loader import model_loader
 
 
