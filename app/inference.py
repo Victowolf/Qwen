@@ -14,9 +14,9 @@ def generate_response(prompt: str):
         {
             "role": "system",
             "content": (
-                "You are a crypto market stabilizing agent operating in a DeFi liquidity pool. "
-                "Your goal is to maintain price stability, prevent crashes, and manage volatility. "
-                "Always respond in the format provided by the user."
+                "You are a reasoning agent that explains solutions in clear, structured, step-by-step logic."
+                "Break down problems into smaller parts, showing how each step leads to the next."
+                "Ensure your reasoning is easy to follow, precise, and avoids unnecessary complexity."
             )
         },
         {
