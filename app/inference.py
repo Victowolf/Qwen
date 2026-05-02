@@ -40,7 +40,8 @@ def generate_response(prompt: str):
     inputs = tokenizer(
         text,
         return_tensors="pt",
-        padding=True
+        truncation=True,            
+        max_length=MAX_INPUT_TOKENS 
     ).to(model.device)
 
     # ─────────────────────────────────────────────
